@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import telegram, time
 import logging, sys
+from variables import token, chat_id
 
 # debug true/false
 logging.basicConfig(stream=sys.stdout, level=logging.ERROR,format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -9,9 +10,6 @@ logger = logging.getLogger("noegig")
 logger.setLevel(logging.INFO)
 
 baseurl = "https://www.noegig.at/bestellung/"
-token = ""
-chat_id = 0
-
 
 # telegram
 def send_to_telegram(message):
@@ -38,6 +36,10 @@ def main():
     while True:
         neue_gemeinden = []
         new_list_gemeinden = get_new_list()
+        if len(new_list_gemeinden) == 0:
+            logger.info("new_list_gemeinden is empty, maybe Networkerror, waiting a bit and continue to next loop")
+            time.sleep(10)
+            continue
         for element in new_list_gemeinden:
             if element not in old_list_gemeinden:
                 neue_gemeinden.append(element)
