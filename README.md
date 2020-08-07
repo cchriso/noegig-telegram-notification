@@ -1,6 +1,6 @@
 # noegig-telegram-notification
 
-This script monitors the noegig website for new places (Gemeinden) where fibre optics will be rolled out in Austria.
+This script monitors the noegig website for new places (Gemeinden) where fibre optics will be rolled out in Lower-Austria.
 When new places were found, it will notify me via Telegram.
 
 You have to create a file called **variables.py** in the same directory as the script.py and fill in your chat_id from telegram, as well as the token from your Telegram Bot (can easily be created: https://core.telegram.org/bots#6-botfather)
