@@ -13,9 +13,9 @@ token = "7654321:8d67f7fvs8r6fsd78fgsdr7_sdf4"
 ```
 
 How to get my chat_id?
-Step 1. open this url in your browser. Use your Bot Token (it's the long token) https://api.telegram.org/bot<yourtoken>/getUpdates
-Step 2. send a message to your bot
-Step 3. Refresh the site and look at the result. You should see your chat id
+1. open this url in your browser. Use your Bot Token (it's the long token) https://api.telegram.org/bot\<yourtoken\>/getUpdates
+2. send a message to your bot
+3. Refresh the site and look at the result. You should see your chat id
 
 
 if you want to run this script in a docker container, this is what you'll have to do:
